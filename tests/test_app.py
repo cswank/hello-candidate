@@ -24,9 +24,33 @@ class TestApp(object):
 
     def test_users(self):
         r = requests.get("http://localhost:5000/users")
-        eq_(r.content, '[{"age": 23, "link": "http://localhost:5000/users/1", "id": 1, "name": "buck"}, {"age": 33, "link": "http://localhost:5000/users/2", "id": 2, "name": "liz"}, {"age": 48, "link": "http://localhost:5000/users/3", "id": 3, "name": "fritz"}]')
+        eq_(r.content, '''[
+  {
+    "age": 23, 
+    "link": "http://localhost:5000/users/1", 
+    "id": 1, 
+    "name": "buck"
+  }, 
+  {
+    "age": 33, 
+    "link": "http://localhost:5000/users/2", 
+    "id": 2, 
+    "name": "liz"
+  }, 
+  {
+    "age": 48, 
+    "link": "http://localhost:5000/users/3", 
+    "id": 3, 
+    "name": "fritz"
+  }
+]''')
         
     def test_user(self):
         r = requests.get("http://localhost:5000/users/1")
-        eq_(r.content, '{"age": 23, "link": "http://localhost:5000/users/1", "id": 1, "name": "buck"}')
+        eq_(r.content, '''{
+  "age": 23, 
+  "link": "http://localhost:5000/users/1", 
+  "id": 1, 
+  "name": "buck"
+}''')
         

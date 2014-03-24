@@ -46,7 +46,7 @@ def index():
 def users():
     cur = get_db().cursor()
     users = [get_user(user) for user in cur.execute(USERS_QUERY)]
-    return json.dumps(users)
+    return json.dumps(users, indent=2)
 
 
 @app.route('/users/<user_id>')
@@ -54,7 +54,8 @@ def user(user_id):
     cur = get_db().cursor()
     cur.execute(USER_QUERY, user_id)
     user = get_user(cur.fetchone())
-    return json.dumps(user)
+    return json.dumps(user, indent=2)
+
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
