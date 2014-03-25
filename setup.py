@@ -19,8 +19,9 @@ setup(name='hello',
       zip_safe=False,
       install_requires=[
           # -*- Extra requirements: -*-
-          "nosetests",
+          "nose",
           "flask",
+          "requests",
       ],
       entry_points="""
       # -*- Entry points: -*-

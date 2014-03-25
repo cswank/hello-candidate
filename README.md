@@ -11,6 +11,7 @@ I'd like to see the candidate:
 3.  git clone the project
 4.  install the project using 'python setup.py develop'
 5.  run the tests using nosetests
+6.  find and fix the bug
 
 The tests show the correct output of that the app should produce and
 the messed up output that it currently produces.
